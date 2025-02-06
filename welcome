@@ -1,0 +1,74 @@
+--CREATE REACT APP
+# empty folder
+# npx-node package executor
+npx create-react-my-app #my app is the project name
+cd my-app        #change directory (folder)
+npm start        #
+project folder
+public/index.html:the main html file that serves as the entry point for the app
+scr/index.js: the JavaScript entry point for the react-app where the DOM is rendered
+scr/App.js: the main component that servers as the root of the components tree
+scr/components: a folder to store reusable components
+1, components:(core building block of a react application)
+-- the help to create reusable block of code
+-- if any thing goes wrong in UI, it is very easy to findout and solve that
+1 class component
+2 functional component
+
+APP.JS
+import React from 'react';
+//import '/App.css';
+
+import './App.css';
+import Welcome from './Welcome';
+
+// const Welcome=()=><h1 className='message'>Hello Charan</h1>
+
+// function App(){
+//   return(
+//     <div className='App'>
+//         <Welcome/>  
+//     </div>
+//   )
+// }
+
+const App=()=>{
+  return(
+    <div style={{textAlign:'center',color:'blue'}}>
+      <Welcome greeting="Good morning" name="Charan"/>
+      <Welcome greeting="Hii" name="Murali"/>
+    </div>
+  )
+}
+export default App;
+// const Welcome=()=><h1 className='message' >hello sai</h1>
+// function App() {
+//   return(
+//     <div className='App'>
+//       <Welcome/>
+//     </div>
+//   )
+// }
+// export default App;
+
+WELCOME.JS:
+import React from 'react';
+
+const Welcome=(props)=>{
+    const{name,greeting}=props;
+
+    return(
+        <h1 className="message">{greeting},{name}</h1>
+    )
+
+}
+export default Welcome;
+
+APP.CSS:
+.message{
+  color:blue;
+  background-color: aqua;
+  font-size: 40px;
+  text-align: center;
+  width: 30px;
+}
