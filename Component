@@ -1,0 +1,55 @@
+APP.JS:
+import React from 'react';
+
+const Fruitlist=()=>{
+  const fruits=['apple','banana','orange'];
+  return(
+    <div>
+      <h1>fruits list</h1>
+      <ul>
+        {fruits.map((fruits,index)=>(
+          <li key={index}>{fruits}</li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+export default Fruitlist;
+// import Greeting from './greeting';
+
+// function App(){
+//   const isLoggedIn=false;
+//   return(
+//     <div>
+//         <Greeting isLoggedIn={isLoggedIn}></Greeting>
+//     </div>
+    
+//   )
+// }
+// export default App;
+
+Greeting.js:
+import React from "react";
+
+function Greeting(isLoggedIn){
+    if(isLoggedIn){
+        return <h1>Welcome Back!!</h1>
+    }else{
+        return <h1>Please log in!!!</h1>
+    }
+
+}
+export default Greeting;
+
+Components:
+conditional rendering
+Lists and Keys:
+In react, a list is a collection of terms you want to show on screen
+KEYS: keys in react helps us to keep the track of items in a list
+--react know which items you have changed; updated
+map(): elements in array
+function will be applied to all elements
+const n=[1,2,3,4,5]
+const d=n.map(num=>num*2)
+console.log(d)
+#2,4 6,8,10
