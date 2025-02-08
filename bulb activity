@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            height: 100vh;
+
+        }
+        .button{
+            margin-top: 100px;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-family:'Times New Roman', Times, serif;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body id="body">
+    <img src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png" alt="bulb-go-off-img" class="light-bulb" id="bulbImage" style="height:500px" />
+    <button class="button" id="toggleButton" onclick="toggleLight()">Turn ON</button>
+
+    <script>
+        let isOn=false;
+        
+        function toggleLight(){
+            const body=document.getElementById("body")
+            const bulbImage=document.getElementById("bulbImage")
+            const toggleButton=document.getElementById("toggleButton")
+            
+            isOn=!isOn;
+            if(isOn){
+                body.style.backgroundColor='lightyellow';
+                bulbImage.src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-on-img.png";
+                bulbImage.style.height="500px"
+                toggleButton.innerText="Turn OFF"
+
+            }else{
+                body.style.backgroundColor='black';
+                bulbImage.src="https://d1tgh8fmlzexmh.cloudfront.net/ccbp-dynamic-webapps/bulb-go-off-img.png"
+                toggleButton.innerText="Turn ON"
+            }
+        }
+    </script>
+</body>
+</html>
+
+WEB PAGE
+state:
+state in react:
+In react, state is a like a container that holds the data or information for a component
+This data can be change over time based on user actions or events
+Why state is important:
+-- it allows us the component to remember things
+EX: if you click a button to change a color; the state will store the color and show on the screen
+1 functional components: SYNTAX:
+const[statevariable ,setstatefunction] = useState(intialvalue)
+1. statevariable = it holds the current state(ex: name,color)
+2. setstatefunction = a function which is usd to update the state
+3. intialvalue = the intial value of the state variable when the component first renders
