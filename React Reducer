@@ -1,0 +1,90 @@
+React Reducer():
+--A reducer is a function that helps to update(like score, a list) based on action we take
+1 current state: the current value of state
+3 action
+EXAMPLE:
+action: add or remove the items
+state initial value(3 item)
+Callback in React:
+-- in react, a call back is function that is passed as an argument to another function
+-- call backs are often to communicate with different components
+import React, { useReducer } from 'react';
+
+function appleReducer(state = 3, action) {
+  switch (action.type) {
+    case 'ADD_APPLE':
+      return state + 1;
+    case 'REMOVE_APPLE':
+      return state - 1;
+    default:
+      return state;
+  }
+}
+
+function App() {
+  const [state, dispatch] = useReducer(appleReducer, 3);
+
+  return (
+    <div style={{ padding: '20px', textAlign: 'center' }}>
+      <h1 style={{ color: 'orange' }}>APPLE Counter</h1>
+      <p style={{color: 'bule' }}> Number of APPLES: {state}</p>
+      <button
+        onClick={() => dispatch({ type: 'ADD_APPLE' })}
+        style={{
+          backgroundColor: 'green',
+          color: 'white',
+          padding: '10px 20px',
+          margin: '10px',
+          border: 'none',
+          borderRadius: '20px',
+          cursor: 'pointer',
+        }}
+      >
+        ADD APPLE
+      </button>
+      <button
+        onClick={() => dispatch({ type: 'REMOVE_APPLE' })}
+        style={{
+          backgroundColor: 'red',
+          color: 'white',
+          padding: '10px 20px',
+          margin: '10px',
+          border: 'none',
+          borderRadius: '20px',
+          cursor: 'pointer',
+        }}
+      >
+        REMOVE APPLE
+      </button>
+    </div>
+  );
+}
+
+export default App;
+
+import React,{useReducer} from 'react';
+// //reducer function drag the no of mangoes
+// function mangoReducer(state=3,action){
+//   switch(action.type){
+//     case 'ADD-MANGO':
+//       return state+1;
+//       case 'EAT-MANGO':
+//         return state-1;
+//       default:
+//         return state;
+//   }
+// }
+// function App(){
+//   const [state, dispatch]=useReducer(mangoReducer)
+//   return(
+//     <div style={{padding:'20px'}}>
+//       <h1 style={{color:"blue", textAlign:'center'}}>mangoes Counter</h1>
+//       <p style={{color:"blue",textAlign:"center"}}> Number of mangoes:{state}</p>
+
+//       <button onClick= {()=>dispatch({type:'ADD_MANGO'})} style={{color:'yellowgreen',textAlign:"center"}}>ADD MANGO</button>
+//       <button onClick= {()=>dispatch({type:'EAT_MANGO'})}>EAT MANGO</button>
+//     </div>
+//   )
+// }
+
+// export default App;
